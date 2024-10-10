@@ -1,8 +1,12 @@
 ### Supported functions
 
-|Speech recognition| Speech synthesis | Speaker verification | Speaker identification |
-|------------------|------------------|----------------------|------------------------|
-|   ✔️              |         ✔️        |          ✔️           |                ✔️       |
+|Speech recognition| Speech synthesis |
+|------------------|------------------|
+|   ✔️              |         ✔️        |
+
+|Speaker identification| Speaker diarization | Speaker identification |
+|----------------------|-------------------- |------------------------|
+|   ✔️                  |         ✔️           |            ✔️           |
 
 | Spoken Language identification | Audio tagging | Voice activity detection |
 |--------------------------------|---------------|--------------------------|
@@ -47,6 +51,7 @@ This repository supports running the following functions **locally**
 
   - Speech-to-text (i.e., ASR); both streaming and non-streaming are supported
   - Text-to-speech (i.e., TTS)
+  - Speaker diarization
   - Speaker identification
   - Speaker verification
   - Spoken language identification
@@ -111,6 +116,7 @@ We also have spaces built using WebAssembly. They are listed below:
 |VAD + speech recognition (English + Chinese, 及多种中文方言) with Paraformer-small          |[Click me][wasm-hf-vad-asr-zh-en-paraformer-small]| [地址][wasm-ms-vad-asr-zh-en-paraformer-small]|
 |Speech synthesis (English)                                                                  |[Click me][wasm-hf-tts-piper-en]| [地址][wasm-ms-tts-piper-en]|
 |Speech synthesis (German)                                                                   |[Click me][wasm-hf-tts-piper-de]| [地址][wasm-ms-tts-piper-de]|
+|Speaker diarization                                                                         |[Click me][wasm-hf-speaker-diarization]|[地址][wasm-ms-speaker-diarization]|
 
 ### Links for pre-built Android APKs
 
@@ -168,6 +174,7 @@ We also have spaces built using WebAssembly. They are listed below:
 | Speaker identification (Speaker ID)         | [Address][sid-models]                                                                 |
 | Spoken language identification (Language ID)| See multi-lingual [Whisper][Whisper] ASR models from  [Speech recognition][asr-models]|
 | Punctuation                                 | [Address][punct-models]                                                               |
+| Speaker segmentation                        | [Address][speaker-segmentation-models]                                                |
 
 ### Useful links
 
@@ -191,9 +198,17 @@ for 新一代 Kaldi **微信交流群** and **QQ 交流群**.
 It shows how to use the ASR and TTS Python APIs with FastAPI.
 </details>
 
-### [TMSpeech](https://github.com/jxlpzqc/TMSpeech)
+### [腾讯会议摸鱼工具 TMSpeech](https://github.com/jxlpzqc/TMSpeech)
 
 Uses streaming ASR in C# with graphical user interface.
+
+Video demo in Chinese: [【开源】Windows实时字幕软件（网课/开会必备）](https://www.bilibili.com/video/BV1rX4y1p7Nx)
+
+### [lol互动助手](https://github.com/l1veIn/lol-wom-electron)
+
+It uses the JavaScript API of sherpa-onnx along with [Electron](https://electronjs.org/)
+
+Video demo in Chinese: [爆了！炫神教你开打字挂！真正影响胜率的英雄联盟工具！英雄联盟的最后一块拼图！和游戏中的每个人无障碍沟通！](https://www.bilibili.com/video/BV142tje9E74)
 
 
 [sherpa-rs]: https://github.com/thewh1teagle/sherpa-rs
@@ -248,6 +263,8 @@ Uses streaming ASR in C# with graphical user interface.
 [wasm-ms-tts-piper-en]: https://modelscope.cn/studios/k2-fsa/web-assembly-tts-sherpa-onnx-en
 [wasm-hf-tts-piper-de]: https://huggingface.co/spaces/k2-fsa/web-assembly-tts-sherpa-onnx-de
 [wasm-ms-tts-piper-de]: https://modelscope.cn/studios/k2-fsa/web-assembly-tts-sherpa-onnx-de
+[wasm-hf-speaker-diarization]: https://huggingface.co/spaces/k2-fsa/web-assembly-speaker-diarization-sherpa-onnx
+[wasm-ms-speaker-diarization]: https://www.modelscope.cn/studios/csukuangfj/web-assembly-speaker-diarization-sherpa-onnx
 [apk-streaming-asr]: https://k2-fsa.github.io/sherpa/onnx/android/apk.html
 [apk-streaming-asr-cn]: https://k2-fsa.github.io/sherpa/onnx/android/apk-cn.html
 [apk-tts]: https://k2-fsa.github.io/sherpa/onnx/tts/apk-engine.html
@@ -290,5 +307,6 @@ Uses streaming ASR in C# with graphical user interface.
 [sid-models]: https://github.com/k2-fsa/sherpa-onnx/releases/tag/speaker-recongition-models
 [slid-models]: https://github.com/k2-fsa/sherpa-onnx/releases/tag/speaker-recongition-models
 [punct-models]: https://github.com/k2-fsa/sherpa-onnx/releases/tag/punctuation-models
+[speaker-segmentation-models]: https://github.com/k2-fsa/sherpa-onnx/releases/tag/speaker-segmentation-models
 [GigaSpeech]: https://github.com/SpeechColab/GigaSpeech
 [WenetSpeech]: https://github.com/wenet-e2e/WenetSpeech
